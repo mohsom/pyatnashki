@@ -16,7 +16,6 @@ const arrows = {
 class GameContainer extends Component {
    constructor(props) {
        super(props);
-       console.log(props);
        this.keyPress = this.keyPress.bind(this);
    }
 
@@ -59,18 +58,6 @@ class GameContainer extends Component {
 
         return (
             <div className="Game-container">
-                <span>Розмір поля</span>
-                <br/>
-                <label>
-                    <span>5 на 5</span>
-                    <input name="size" type="radio" checked={this.props.size === 5}/>
-                </label>
-
-                <label>
-                    <span>6 на 6</span>
-                    <input name="size" type="radio" checked={this.props.size === 6}/>
-                </label>
-
                 <div>
                     <button type="button" onClick={()=>this.props.shuffleGrid()}>Нова гра</button>
                 </div>

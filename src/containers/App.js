@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {createStore } from 'redux';
 import { Provider } from 'react-redux';
-
-import Game from './Game';
+import Root from './RootContainer';
 import reducers from '../reducers';
 
 const store = createStore(reducers);
@@ -12,7 +11,7 @@ export default class App extends Component {
         return (
             <div>
                 <Provider store={store}>
-                    <Game />
+                    <Root/>
                 </Provider>
 
             </div>

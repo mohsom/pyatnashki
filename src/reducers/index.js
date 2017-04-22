@@ -3,9 +3,11 @@
  */
 import { combineReducers } from 'redux'
 import grid from './Game.reducer'
+import size from './Switch.reducer'
 
 const App = combineReducers({
     grid,
+    size
 });
 
 export default App;
