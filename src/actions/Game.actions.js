@@ -1,7 +1,7 @@
 /**
  * Created by Volodya Skalskyi on 4/22/2017.
  */
-import * as types from '../constants/ActionTypes';
+import * as types from '../constants/Game.ActionTypes';
 
 export function tileMoveUp() {
     return {

@@ -1,8 +1,8 @@
 /*eslint-disable*/
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import * as actions from '../actions/GameActions';
-import './Game.css';
+import * as actions from '../actions/Game.actions';
+import '../styles/Game.css';
 import Tile from '../components/Tile';
 
 

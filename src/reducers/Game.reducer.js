@@ -2,7 +2,7 @@
  * Created by Volodya Skalskyi on 4/22/2017.
  */
 import shuffle from 'lodash/shuffle';
-import * as actions from '../constants/ActionTypes';
+import * as actions from '../constants/Game.ActionTypes';
 
 const initialState = {
     grid: [],
@@ -12,6 +12,10 @@ const initialState = {
 };
 
 function grid(state = initialState, action) {
+    function checkIfWin() {
+
+    }
+    
     switch (action.type) {
         case actions.TILE_MOVE_UP: {
             let newState = state;
