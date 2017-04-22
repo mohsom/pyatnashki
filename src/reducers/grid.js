@@ -1,6 +1,7 @@
 /**
  * Created by Volodya Skalskyi on 4/22/2017.
  */
+import shuffle from 'lodash/shuffle';
 import * as actions from '../constants/ActionTypes';
 
 const initialState = {
@@ -75,6 +76,16 @@ function grid(state = initialState, action) {
             grid[state.size - 1][state.size - 1] = null;
             newState.grid = grid;
             return {...state, newState};
+        }
+
+        case actions.SHUFFLE_GRID: {
+            let grid = Object.assign({}, state.grid);
+            grid = shuffle(grid);
+            grid = grid.map((row) => {
+               return shuffle(row);
+            });
+
+            return {...state, grid};
         }
 
         default: {

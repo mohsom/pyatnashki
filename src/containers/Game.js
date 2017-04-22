@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions/GameActions';
 import './Game.css';
+import Tile from '../components/Tile';
+
 
 const arrows = {
     up: 38,
@@ -16,7 +18,6 @@ class GameContainer extends Component {
        super(props);
        console.log(props);
        this.keyPress = this.keyPress.bind(this);
-       this.shuffleTiles = this.shuffleTiles.bind(this);
    }
 
     componentWillMount() {
@@ -47,19 +48,13 @@ class GameContainer extends Component {
         }
     };
 
-   shuffleTiles() {
-       //ddddd
-   };
-
     render() {
         let tiles = [];
         this.props.grid.grid.forEach((row) => {
             tiles = tiles.concat(row);
         });
         tiles = tiles.map((tile, index) => (
-            <div key={index} className={tile ? "Grid__Tile" : "Grid__Tile Grid__Tile_empty"}>
-                {tile ? tile : ''}
-            </div>
+            <Tile value={tile} key={index}/>
         ));
 
         return (
@@ -77,7 +72,7 @@ class GameContainer extends Component {
                 </label>
 
                 <div>
-                    <button type="button" onClick={this.shuffleTiles()}>Нова гра</button>
+                    <button type="button" onClick={()=>this.props.shuffleGrid()}>Нова гра</button>
                 </div>
 
                 <div className="Grid">
@@ -102,7 +97,8 @@ const mapDispatchToProps = (dispatch) => {
         tileMoveDown: () => {dispatch(actions.tileMoveDown())},
         tileMoveLeft: () => {dispatch(actions.tileMoveLeft())},
         tileMoveRight: () => {dispatch(actions.tileMoveRight())},
-        fillGrid: ()=>{dispatch(actions.fillGrid())}
+        fillGrid: ()=>{dispatch(actions.fillGrid())},
+        shuffleGrid: ()=>{dispatch(actions.shuffleGrid())}
     }
 };
 
