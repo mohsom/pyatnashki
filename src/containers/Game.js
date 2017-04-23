@@ -26,7 +26,7 @@ class GameContainer extends Component {
     }
 
     keyPress(e) {
-        if (this.props.gameStarted) {
+        if (this.props.data.gameStarted) {
             switch (e.keyCode) {
                 case arrows.up: {
                     e.preventDefault();
@@ -62,14 +62,14 @@ class GameContainer extends Component {
 
     render() {
         let tiles = [];
-        this.props.grid.grid.forEach((row) => {
+        this.props.data.grid.forEach((row) => {
             tiles = tiles.concat(row);
         });
         tiles = tiles.map((tile, index) => (
             <Tile value={tile} key={index}/>
         ));
 
-        let className = `Grid Grid_${this.props.size.size}`;
+        let className = `Grid Grid_${this.props.data.size}`;
 
         return (
             <div>
@@ -88,9 +88,7 @@ class GameContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        grid: state.grid,
-        size: state.size,
-        gameStarted: state.grid.gameStarted
+        data: state.grid
     }
 };
 

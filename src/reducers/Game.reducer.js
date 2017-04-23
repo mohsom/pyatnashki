@@ -64,7 +64,7 @@ function grid(state = initialState, action) {
         }
 
         case actions.TILE_MOVE_RIGHT: {
-            let grid = state.grid, x=state.x, y=state.y;
+            let grid = state.grid, x=state.x, y=state.y, size=state.size;
 
             if (y < size - 1) {
                 grid[x][y] = grid[x][y + 1];
