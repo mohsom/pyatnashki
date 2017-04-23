@@ -8,61 +8,74 @@ const initialState = {
     grid: [],
     size: 3,
     x: 2,
-    y: 2
+    y: 2,
+    gameStarted: false
 };
 
 function grid(state = initialState, action) {
     switch (action.type) {
-        case actions.TILE_MOVE_UP: {
-            let newState = state;
+        case actions.NEW_GAME: {
+            return {
+                ...state,
+                gameStarted: true
+            }
+        }
 
-            if (newState.x > 0) {
-                newState.grid[newState.x][newState.y] = newState.grid[newState.x - 1][newState.y];
-                newState.grid[newState.x - 1][newState.y] = null;
-                newState.x--;
+        case actions.RESET_GAME: {
+            return {
+                ...state,
+                gameStarted: false
+            }
+        }
+
+        case actions.TILE_MOVE_UP: {
+            let grid = state.grid, x=state.x, y=state.y;
+
+            if (x > 0) {
+                grid[x][y] = grid[x - 1][y];
+                grid[x - 1][y] = null;
+                x--;
             }
 
-            return {...state, newState};
+            return {...state, grid, x, y};
         }
 
         case actions.TILE_MOVE_DOWN: {
-            let newState = state;
-
-            if (newState.x < newState.size - 1) {
-                newState.grid[newState.x][newState.y] = newState.grid[newState.x + 1][newState.y];
-                newState.grid[newState.x + 1][newState.y] = null;
-                newState.x++;
+            let grid = state.grid, x=state.x, y=state.y, size=state.size;
+            if (x < size - 1) {
+                grid[x][y] = grid[x + 1][y];
+                grid[x + 1][y] = null;
+                x++;
             }
 
-            return {...state, newState};
+            return {...state, grid, x, y};
         }
 
         case actions.TILE_MOVE_LEFT: {
-            let newState = state;
+            let grid = state.grid, x=state.x, y=state.y;
 
-            if (newState.y > 0) {
-                newState.grid[newState.x][newState.y] = newState.grid[newState.x][newState.y - 1];
-                newState.grid[newState.x][newState.y - 1] = null;
-                newState.y--;
+            if (y > 0) {
+                grid[x][y] = grid[x][y - 1];
+                grid[x][y - 1] = null;
+                y--;
             }
 
-            return {...state, newState};
+            return {...state, grid, x, y};
         }
 
         case actions.TILE_MOVE_RIGHT: {
-            let newState = state;
+            let grid = state.grid, x=state.x, y=state.y;
 
-            if (newState.y < newState.size - 1) {
-                newState.grid[newState.x][newState.y] = newState.grid[newState.x][newState.y + 1];
-                newState.grid[newState.x][newState.y + 1] = null;
-                newState.y++;
+            if (y < size - 1) {
+                grid[x][y] = grid[x][y + 1];
+                grid[x][y + 1] = null;
+                y++;
             }
 
-            return {...state, newState};
+            return {...state, grid, x, y};
         }
 
         case actions.FILL_GRID: {
-            let newState = state;
             let size = action.size.size;
             let grid = [], val = 1;
             for (let i = 0; i < size; i++) {
@@ -85,8 +98,7 @@ function grid(state = initialState, action) {
                 });
             });
 
-            newState.grid = grid;
-            return {...state, newState, size,x,y};
+            return {...state, grid, size,x,y};
         }
 
         case actions.SHUFFLE_GRID: {

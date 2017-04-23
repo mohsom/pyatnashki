@@ -40,3 +40,15 @@ export function shuffleGrid() {
         type: types.SHUFFLE_GRID
     };
 }
+
+export function newGame() {
+    return {
+        type: types.NEW_GAME
+    };
+}
+
+export function resetGame() {
+    return {
+      type: types.RESET_GAME
+    };
+}

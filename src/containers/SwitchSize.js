@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions/Switch.actions';
 import '../styles/Switch.css';
-import {fillGrid} from '../actions/Game.actions';
+import {fillGrid, resetGame} from '../actions/Game.actions';
 
 class SwitchContainer extends Component {
     constructor(props) {
@@ -48,7 +48,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        switchSize: (size)=>{dispatch(actions.switchSize(size)); dispatch(fillGrid())}
+        switchSize: (size)=>{dispatch(actions.switchSize(size)); dispatch(fillGrid()); dispatch(resetGame())}
     }
 }
 

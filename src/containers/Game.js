@@ -26,26 +26,33 @@ class GameContainer extends Component {
     }
 
     keyPress(e) {
-        e.preventDefault();
-        switch (e.keyCode) {
-            case arrows.up: {
-                this.props.tileMoveDown();
-                break;
-            }
-            case arrows.down: {
-                this.props.tileMoveUp();
-                break;
-            }
+        if (this.props.gameStarted) {
+            switch (e.keyCode) {
+                case arrows.up: {
+                    e.preventDefault();
+                    this.props.tileMoveDown();
+                    break;
+                }
+                case arrows.down: {
+                    e.preventDefault();
+                    this.props.tileMoveUp();
+                    break;
+                }
 
-            case arrows.left: {
-                this.props.tileMoveRight();
-                break;
-            }
+                case arrows.left: {
+                    e.preventDefault();
+                    this.props.tileMoveRight();
+                    break;
+                }
 
-            case arrows.right: {
-                this.props.tileMoveLeft();
-                break;
+                case arrows.right: {
+                    e.preventDefault();
+                    this.props.tileMoveLeft();
+                    break;
+                }
             }
+        } else {
+            return false;
         }
     };
 
@@ -67,7 +74,8 @@ class GameContainer extends Component {
         return (
             <div>
                 <div>
-                    <button className="New-game" type="button" onClick={() => this.props.shuffleGrid()}>Нова гра</button>
+                    <button className="New-game" type="button" onClick={() => {this.props.shuffleGrid(); this.props.newGame()}}>Нова гра
+                    </button>
                 </div>
 
                 <div className={className}>
@@ -81,7 +89,8 @@ class GameContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         grid: state.grid,
-        size: state.size
+        size: state.size,
+        gameStarted: state.grid.gameStarted
     }
 };
 
@@ -104,6 +113,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         shuffleGrid: () => {
             dispatch(actions.shuffleGrid())
+        },
+        newGame: () => {
+            dispatch(actions.newGame())
         }
     }
 };
