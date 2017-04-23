@@ -89,7 +89,18 @@ function grid(state = initialState, action) {
                return shuffle(row);
             });
 
-            return {...state, grid};
+            let x, y;
+
+            grid.forEach((row, i)=>{
+                row.forEach((tile, j)=> {
+                    if(!tile) {
+                        x=i;
+                        y=j;
+                    }
+                });
+            });
+
+            return {...state, grid,x, y};
         }
 
         default: {
