@@ -35,7 +35,11 @@
     margin: 2px;
 }
 
-.Grid__Tile_empty {
+.Grid_win .Grid__Tile {
+    background: green;
+}
+
+.Grid__Tile_empty , .Grid_win .Grid__Tile_empty{
     background: #e8e8e8;
 }
 

@@ -81,13 +81,13 @@ class GameContainer extends Component {
             <Tile value={tile} key={index}/>
         ));
 
-        this.win = this.checkIfWin();
-
         if(!this.props.data.gameStarted) {
             this.solution = this.props.data.grid;
         }
 
-        let className = `Grid Grid_${this.props.data.size}`;
+        this.win = this.checkIfWin();
+
+        let className = `Grid Grid_${this.props.data.size} ${this.win?'Grid_win':''}`;
 
         return (
             <div>
