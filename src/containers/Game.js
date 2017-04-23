@@ -56,13 +56,15 @@ class GameContainer extends Component {
             <Tile value={tile} key={index}/>
         ));
 
+        let className = `Grid Grid_${this.props.size.size}`; //ddddddddddddd
+
         return (
             <div className="Game-container">
                 <div>
                     <button type="button" onClick={()=>this.props.shuffleGrid()}>Нова гра</button>
                 </div>
 
-                <div className="Grid">
+                <div className={className}>
                     {tiles}
                 </div>
             </div>
@@ -74,7 +76,8 @@ const mapStateToProps = (state) => {
     return {
         grid: state.grid,
         x: state.x,
-        y: state.y
+        y: state.y,
+        size: state.size
     }
 };
 

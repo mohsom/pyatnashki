@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1a01e7c2-0010-484f-81e5-9117b72d0f3a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/Game.actions.js" afterPath="$PROJECT_DIR$/src/actions/Game.actions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/Switch.actions.js" afterPath="$PROJECT_DIR$/src/actions/Switch.actions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/App.js" afterPath="$PROJECT_DIR$/src/containers/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/SwitchSize.js" afterPath="$PROJECT_DIR$/src/containers/SwitchSize.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Game.js" afterPath="$PROJECT_DIR$/src/containers/Game.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/Game.reducer.js" afterPath="$PROJECT_DIR$/src/reducers/Game.reducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/Game.css" afterPath="$PROJECT_DIR$/src/styles/Game.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,7 +20,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SwitchSize.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/Game.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="58" column="76" lean-forward="true" selection-start-line="58" selection-start-column="76" selection-end-line="58" selection-end-column="76" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#19#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SwitchSize.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/SwitchSize.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -45,25 +56,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.reducer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/Game.reducer.js">
+      <file leaf-file-name="Game.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/Game.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="71" column="35" lean-forward="false" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
-              <folding>
-                <element signature="e#53#90#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="391">
+              <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.actions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/Game.actions.js">
+      <file leaf-file-name="Game.reducer.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/reducers/Game.reducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+            <state relative-caret-position="306">
+              <caret line="86" column="31" lean-forward="true" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
               <folding>
-                <element signature="e#53#108#0" expanded="true" />
+                <element signature="e#53#90#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,15 +132,16 @@
         <option value="$PROJECT_DIR$/src/constants/ActionTypes.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/styles/Switch.css" />
-        <option value="$PROJECT_DIR$/src/containers/Game.js" />
         <option value="$PROJECT_DIR$/src/containers/RootContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/App.js" />
         <option value="$PROJECT_DIR$/src/actions/Game.actions.js" />
-        <option value="$PROJECT_DIR$/src/reducers/Game.reducer.js" />
         <option value="$PROJECT_DIR$/src/actions/Switch.actions.js" />
         <option value="$PROJECT_DIR$/src/constants/Switch.ActionTypes.js" />
         <option value="$PROJECT_DIR$/src/reducers/Switch.reducer.js" />
         <option value="$PROJECT_DIR$/src/containers/SwitchSize.js" />
+        <option value="$PROJECT_DIR$/src/styles/Game.css" />
+        <option value="$PROJECT_DIR$/src/containers/Game.js" />
+        <option value="$PROJECT_DIR$/src/reducers/Game.reducer.js" />
       </list>
     </option>
   </component>
@@ -446,7 +456,7 @@
       <updated>1492854583262</updated>
       <workItem from="1492854584967" duration="2565000" />
       <workItem from="1492860647855" duration="123000" />
-      <workItem from="1492861181228" duration="36258000" />
+      <workItem from="1492861181228" duration="36691000" />
     </task>
     <task id="LOCAL-00001" summary="Tile movement is ready">
       <created>1492871432229</created>
@@ -497,11 +507,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492944107644</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="SwitchSize component">
+      <created>1492948169145</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1492948169176</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38946000" />
+    <option name="totallyTimeSpent" value="39379000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -547,7 +564,8 @@
     <MESSAGE value="Tiles shuffle action" />
     <MESSAGE value="SwitchSize container" />
     <MESSAGE value="Shuffle bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shuffle bug fixed" />
+    <MESSAGE value="SwitchSize component" />
+    <option name="LAST_COMMIT_MESSAGE" value="SwitchSize component" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -570,7 +588,7 @@
         <state relative-caret-position="102">
           <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -599,7 +617,7 @@
         <state relative-caret-position="102">
           <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -624,14 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/Game.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -690,32 +700,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#19#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/Switch.reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,30 +720,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/Game.reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="71" column="35" lean-forward="false" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
-          <folding>
-            <element signature="e#53#90#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/Switch.actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/Game.actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
           <folding>
             <element signature="e#53#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/Game.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="58" column="76" lean-forward="true" selection-start-line="58" selection-start-column="76" selection-end-line="58" selection-end-column="76" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#19#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -764,6 +756,32 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#53#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/Switch.reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/Switch.actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/Game.reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="86" column="31" lean-forward="true" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+          <folding>
+            <element signature="e#53#90#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -79,8 +79,20 @@ function grid(state = initialState, action) {
                 }
             }
             grid[size - 1][size - 1] = null;
+
+            let x, y;
+
+            grid.forEach((row, i)=>{
+                row.forEach((tile, j)=> {
+                    if(!tile) {
+                        x=i;
+                        y=j;
+                    }
+                });
+            });
+
             newState.grid = grid;
-            return {...state, newState, size};
+            return {...state, newState, size,x,y};
         }
 
         case actions.SHUFFLE_GRID: {

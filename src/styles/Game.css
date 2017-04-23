@@ -10,12 +10,25 @@
     position: absolute;
     margin: auto;
     top: 0;
-    width: 370px;
-    height: 370px;
     bottom: 0;
     right: 0;
     left: 0;
     flex-flow: row wrap;
+}
+
+.Grid_3 {
+    width: 230px;
+    height: 230px;
+}
+
+.Grid_5 {
+    width: 370px;
+    height: 370px;
+}
+
+.Grid_6 {
+    width: 450px;
+    height: 450px;
 }
 
 .Grid__Tile {
