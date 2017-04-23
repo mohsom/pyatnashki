@@ -25,16 +25,17 @@ class SwitchContainer extends Component {
                     <span>3 на 3</span>
                     <input name="size" type="radio" onChange={()=>this.props.switchSize(3)} checked={this.props.data.size === 3}/>
                 </label>
-
+                <br/>
                 <label>
                     <span>5 на 5</span>
                     <input name="size" type="radio" onChange={()=>this.props.switchSize(5)} checked={this.props.data.size === 5}/>
                 </label>
-
+                <br/>
                 <label>
                     <span>6 на 6</span>
                     <input name="size" type="radio" onChange={()=>this.props.switchSize(6)} checked={this.props.data.size === 6}/>
                 </label>
+                <br/>
             </div>
         )
     }
