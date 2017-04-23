@@ -18,6 +18,7 @@ class GameContainer extends Component {
         super(props);
         this.keyPress = this.keyPress.bind(this);
         this.solution = null;
+        this.win = false;
     }
 
     componentWillMount() {
@@ -26,7 +27,7 @@ class GameContainer extends Component {
     }
 
     keyPress(e) {
-        if (this.props.data.gameStarted) {
+        if (this.props.data.gameStarted && !this.win) {
             switch (e.keyCode) {
                 case arrows.up: {
                     e.preventDefault();
@@ -59,13 +60,15 @@ class GameContainer extends Component {
 
     checkIfWin() {
         let win = true;
-        this.props.data.grid.forEach((row, i)=>  {
-            row.forEach((tile, j)=> {
-                if(tile!==this.solution[i][j]) {
-                    win=false;
-                }
+        if(this.solution) {
+            this.props.data.grid.forEach((row, i) => {
+                row.forEach((tile, j) => {
+                    if (tile !== this.solution[i][j]) {
+                        win = false;
+                    }
+                });
             });
-        });
+        }
         return win;
     };
 
@@ -78,6 +81,8 @@ class GameContainer extends Component {
             <Tile value={tile} key={index}/>
         ));
 
+        this.win = this.checkIfWin();
+
         if(!this.props.data.gameStarted) {
             this.solution = this.props.data.grid;
         }
@@ -86,7 +91,7 @@ class GameContainer extends Component {
 
         return (
             <div>
-                {(this.props.data.gameStarted && this.checkIfWin())?'win':''}
+                {(this.props.data.gameStarted && this.win)?'win':''}
                 <div>
                     <button className="New-game" type="button" onClick={() => {this.props.shuffleGrid(); this.props.newGame()}}>Нова гра
                     </button>

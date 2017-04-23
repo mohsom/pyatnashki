@@ -21,8 +21,8 @@
       <file leaf-file-name="Game.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/Game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="88" column="44" lean-forward="true" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
+            <state relative-caret-position="263">
+              <caret line="71" column="19" lean-forward="true" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#19#58#0" expanded="true" />
@@ -451,7 +451,7 @@
       <updated>1492854583262</updated>
       <workItem from="1492854584967" duration="2565000" />
       <workItem from="1492860647855" duration="123000" />
-      <workItem from="1492861181228" duration="44023000" />
+      <workItem from="1492861181228" duration="44447000" />
     </task>
     <task id="LOCAL-00001" summary="Tile movement is ready">
       <created>1492871432229</created>
@@ -544,11 +544,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492956208329</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="checkIfWin method">
+      <created>1492957095787</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1492957095787</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46711000" />
+    <option name="totallyTimeSpent" value="47135000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -597,7 +604,8 @@
     <MESSAGE value="SwitchSize component" />
     <MESSAGE value="Styles" />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="checkIfWin method" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkIfWin method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -815,8 +823,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="88" column="44" lean-forward="true" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
+        <state relative-caret-position="263">
+          <caret line="71" column="19" lean-forward="true" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#19#58#0" expanded="true" />
