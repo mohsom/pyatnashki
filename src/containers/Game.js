@@ -17,7 +17,7 @@ class GameContainer extends Component {
     constructor(props) {
         super(props);
         this.keyPress = this.keyPress.bind(this);
-
+        this.solution = null;
     }
 
     componentWillMount() {
@@ -54,10 +54,19 @@ class GameContainer extends Component {
         } else {
             return false;
         }
+
     };
 
     checkIfWin() {
-
+        let win = true;
+        this.props.data.grid.forEach((row, i)=>  {
+            row.forEach((tile, j)=> {
+                if(tile!==this.solution[i][j]) {
+                    win=false;
+                }
+            });
+        });
+        return win;
     };
 
     render() {
@@ -69,10 +78,15 @@ class GameContainer extends Component {
             <Tile value={tile} key={index}/>
         ));
 
+        if(!this.props.data.gameStarted) {
+            this.solution = this.props.data.grid;
+        }
+
         let className = `Grid Grid_${this.props.data.size}`;
 
         return (
             <div>
+                {(this.props.data.gameStarted && this.checkIfWin())?'win':''}
                 <div>
                     <button className="New-game" type="button" onClick={() => {this.props.shuffleGrid(); this.props.newGame()}}>Нова гра
                     </button>
