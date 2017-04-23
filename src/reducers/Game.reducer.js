@@ -6,16 +6,12 @@ import * as actions from '../constants/Game.ActionTypes';
 
 const initialState = {
     grid: [],
-    size: 5,
-    x: 4,
-    y: 4
+    size: 3,
+    x: 2,
+    y: 2
 };
 
 function grid(state = initialState, action) {
-    function checkIfWin() {
-
-    }
-    
     switch (action.type) {
         case actions.TILE_MOVE_UP: {
             let newState = state;
@@ -68,7 +64,6 @@ function grid(state = initialState, action) {
 
         case actions.FILL_GRID: {
             let newState = state;
-            console.log('exe');
             let size = action.size.size;
             let grid = [], val = 1;
             for (let i = 0; i < size; i++) {

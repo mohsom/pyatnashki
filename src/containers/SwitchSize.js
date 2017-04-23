@@ -13,7 +13,7 @@ class SwitchContainer extends Component {
     }
 
     componentWillMount() {
-        this.props.switchSize(5);
+        this.props.switchSize(3);
     }
 
     render() {

@@ -27,21 +27,21 @@ class GameContainer extends Component {
     keyPress(e) {
         switch (e.keyCode) {
             case arrows.up: {
-                this.props.tileMoveUp();
+                this.props.tileMoveDown();
                 break;
             }
             case arrows.down: {
-                this.props.tileMoveDown();
+                this.props.tileMoveUp();
                 break;
             }
 
             case arrows.left: {
-                this.props.tileMoveLeft();
+                this.props.tileMoveRight();
                 break;
             }
 
             case arrows.right: {
-                this.props.tileMoveRight();
+                this.props.tileMoveLeft();
                 break;
             }
         }
@@ -56,7 +56,7 @@ class GameContainer extends Component {
             <Tile value={tile} key={index}/>
         ));
 
-        let className = `Grid Grid_${this.props.size.size}`; //ddddddddddddd
+        let className = `Grid Grid_${this.props.size.size}`;
 
         return (
             <div className="Game-container">
