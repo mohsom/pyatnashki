@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import Root from './RootContainer';
 import reducers from '../reducers';
 
-const store = createStore(reducers);
+export const store = createStore(reducers);
 
 export default class App extends Component {
     render() {

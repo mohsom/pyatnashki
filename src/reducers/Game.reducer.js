@@ -68,18 +68,19 @@ function grid(state = initialState, action) {
 
         case actions.FILL_GRID: {
             let newState = state;
-
+            console.log('exe');
+            let size = action.size.size;
             let grid = [], val = 1;
-            for (let i = 0; i < state.size; i++) {
-                grid[i] = new Array(state.size);
-                for (let j = 0; j < state.size; j++) {
+            for (let i = 0; i < size; i++) {
+                grid[i] = new Array(size);
+                for (let j = 0; j < size; j++) {
                     grid[i][j] = val;
                     val++;
                 }
             }
-            grid[state.size - 1][state.size - 1] = null;
+            grid[size - 1][size - 1] = null;
             newState.grid = grid;
-            return {...state, newState};
+            return {...state, newState, size};
         }
 
         case actions.SHUFFLE_GRID: {

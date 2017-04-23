@@ -2,6 +2,7 @@
  * Created by Volodya Skalskyi on 4/22/2017.
  */
 import * as types from '../constants/Game.ActionTypes';
+import {store} from '../containers/App';
 
 export function tileMoveUp() {
     return {
@@ -29,7 +30,8 @@ export function tileMoveRight() {
 
 export function fillGrid() {
     return {
-        type: types.FILL_GRID
+        type: types.FILL_GRID,
+        size: store.getState().size
     };
 }
 
