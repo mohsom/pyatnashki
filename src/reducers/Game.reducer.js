@@ -22,7 +22,6 @@ function grid(state = initialState, action) {
                 newState.x--;
             }
 
-            console.log('up!');
             return {...state, newState};
         }
 
@@ -34,7 +33,7 @@ function grid(state = initialState, action) {
                 newState.grid[newState.x + 1][newState.y] = null;
                 newState.x++;
             }
-            console.log('down!');
+
             return {...state, newState};
         }
 
@@ -46,7 +45,7 @@ function grid(state = initialState, action) {
                 newState.grid[newState.x][newState.y - 1] = null;
                 newState.y--;
             }
-            console.log('left!');
+
             return {...state, newState};
         }
 
@@ -58,7 +57,7 @@ function grid(state = initialState, action) {
                 newState.grid[newState.x][newState.y + 1] = null;
                 newState.y++;
             }
-            console.log('right!');
+
             return {...state, newState};
         }
 

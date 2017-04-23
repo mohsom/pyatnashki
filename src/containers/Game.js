@@ -14,17 +14,19 @@ const arrows = {
 };
 
 class GameContainer extends Component {
-   constructor(props) {
-       super(props);
-       this.keyPress = this.keyPress.bind(this);
-   }
+    constructor(props) {
+        super(props);
+        this.keyPress = this.keyPress.bind(this);
+
+    }
 
     componentWillMount() {
-       this.props.fillGrid();
-       document.addEventListener('keydown', this.keyPress);
+        this.props.fillGrid();
+        document.addEventListener('keydown', this.keyPress);
     }
 
     keyPress(e) {
+        e.preventDefault();
         switch (e.keyCode) {
             case arrows.up: {
                 this.props.tileMoveDown();
@@ -47,6 +49,10 @@ class GameContainer extends Component {
         }
     };
 
+    checkIfWin() {
+
+    };
+
     render() {
         let tiles = [];
         this.props.grid.grid.forEach((row) => {
@@ -59,9 +65,9 @@ class GameContainer extends Component {
         let className = `Grid Grid_${this.props.size.size}`;
 
         return (
-            <div className="Game-container">
+            <div>
                 <div>
-                    <button type="button" onClick={()=>this.props.shuffleGrid()}>Нова гра</button>
+                    <button className="New-game" type="button" onClick={() => this.props.shuffleGrid()}>Нова гра</button>
                 </div>
 
                 <div className={className}>
@@ -75,20 +81,30 @@ class GameContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         grid: state.grid,
-        x: state.x,
-        y: state.y,
         size: state.size
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        tileMoveUp: () => {dispatch(actions.tileMoveUp())},
-        tileMoveDown: () => {dispatch(actions.tileMoveDown())},
-        tileMoveLeft: () => {dispatch(actions.tileMoveLeft())},
-        tileMoveRight: () => {dispatch(actions.tileMoveRight())},
-        fillGrid: ()=>{dispatch(actions.fillGrid())},
-        shuffleGrid: ()=>{dispatch(actions.shuffleGrid())}
+        tileMoveUp: () => {
+            dispatch(actions.tileMoveUp())
+        },
+        tileMoveDown: () => {
+            dispatch(actions.tileMoveDown())
+        },
+        tileMoveLeft: () => {
+            dispatch(actions.tileMoveLeft())
+        },
+        tileMoveRight: () => {
+            dispatch(actions.tileMoveRight())
+        },
+        fillGrid: () => {
+            dispatch(actions.fillGrid())
+        },
+        shuffleGrid: () => {
+            dispatch(actions.shuffleGrid())
+        }
     }
 };
 

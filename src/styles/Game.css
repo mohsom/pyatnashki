@@ -1,18 +1,8 @@
-.Game-container {
-    margin: 0 auto;
-    width: 400px;
-}
-
 .Grid {
     display: flex;
     display: -ms-flexbox;
     justify-content: space-around;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    margin: 50px auto;
     flex-flow: row wrap;
 }
 
@@ -47,4 +37,13 @@
 
 .Grid__Tile_empty {
     background: #e8e8e8;
+}
+
+.New-game {
+    width: 150px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    outline-width: 0;
 }
